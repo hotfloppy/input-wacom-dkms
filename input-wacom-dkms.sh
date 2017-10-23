@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #  input-wacom-dkms script will download the input-wacom drivers from the
 #  website and install them in the system using dkms. I wrote and tested this
 #  script in Ubuntu 14.04, but it should be working on different versions
@@ -52,8 +52,8 @@ if [[ "$1" != "install" && "$1" != "uninstall" ]]; then
 fi
 
 pkgname=input-wacom
-pkgver=0.32.0
-dest_dir="/usr/src/"
+pkgver=0.37.1
+dest_dir="/opt/"
 dkms_location="$dest_dir"/"$pkgname-$pkgver"/"dkms.conf"
 blacklist_file="/etc/modprobe.d/blacklist-""$pkgname""-dkms.conf"
 udev_rules_file="/etc/udev/rules.d/wacom.rules"
